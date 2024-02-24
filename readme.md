@@ -2,14 +2,18 @@
 
 **Task-1:**   
 
- - I choosed Github profile page design task
+ - I choosed Github profile page design task.
 
- - Task is completed and submitted
+ - The task is completed and submitted, kindly check and verify it.
 
- **_Task URL :_**
+ - I used HTML, CSS & Bootstrap in this task.
 
- ``` https://esakkigithubprofilepagedesign.netlify.app ```
+ **_Task URL :_**  https://esakkigithubprofilepagedesign.netlify.app
 
- 
+ - I have attached `Output image` for your reference.
+
+ **Output:**
+    ![Output](assets/Output/GitHub%20Profile%20page%20design.PNG)
+
 
    
