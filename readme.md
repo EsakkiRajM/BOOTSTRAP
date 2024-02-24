@@ -14,7 +14,7 @@
 
  **Output:**
     ![Output1](assets/Output/page1.PNG)
-    ![Output1](assets/Output/page2.PNG)
+    ![Output1](assets/Output/Page2.PNG)
 
 
 
