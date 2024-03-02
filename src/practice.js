@@ -12,6 +12,7 @@ let inputAddress2 = document.getElementById('inputAddress2');
 let addressAlertMsg = document.getElementById("addressAlertMsg");
 let email = document.getElementById("email");
 let pinCode = document.getElementById("pinCode");
+let mobileNoAlert = document.getElementById("mobileNoAlert");
 
 //console.log(checkBoxValue.length);
 
@@ -94,13 +95,27 @@ let commonValidation = function () {
             checkBoxValue.forEach(checkbox => {
                 checkbox.disabled = false;
             });
-        } else {
+        } else if (mobileNo.value.length > 10) {
+            checkBoxValue.forEach(checkbox => {
+                mobileNoAlert.innerHTML = "Please enter only 10 digit numbers";
+                mobileNoAlert.style.color = "red";
+                checkbox.disabled = true;
+            });
+        } else if (mobileNo.value.length <= 10) {
+            checkBoxValue.forEach(checkbox => {
+                mobileNoAlert.innerHTML = "";
+                checkbox.disabled = true;
+            });
+        }
+         else {
             checkBoxValue.forEach(checkbox => {
                 checkbox.disabled = true;
             });
         }
     }
     enableCheckboxes();
+    enableAddressBox();
+}
    
 
     let enableAddressBox = function () {
@@ -110,17 +125,19 @@ let commonValidation = function () {
             inputAddress2.disabled = false;
             email.disabled = false;
             checkBoxValidateMsg.innerHTML = "";
+            pinCode.disabled = false;
         } else {
             inputAddress1.disabled = true;
             inputAddress2.disabled = true;
             email.disabled = true;
+            pinCode.disabled = true;
             checkBoxValidateMsg.innerHTML = "Please selct atleast two types of food";
             checkBoxValidateMsg.style.color = "red";
         }
     };
 
-    enableAddressBox();
-
+    
+    
     let enablePincodeBox = function () {
         
         if (inputAddress1.value.length >= 6) {
@@ -130,15 +147,18 @@ let commonValidation = function () {
             addressAlertMsg.innerHTML = "Please enter Address";
             addressAlertMsg.style.color = "red";
             pinCode.disabled = true;
-        } else {
+        } else if(inputAddress1.value.length >= 1) {
+            addressAlertMsg.innerHTML = "";
+            pinCode.disabled = true;
+        } else if(inputAddress1.value.length <= 5){
+            addressAlertMsg.innerHTML = "Please enter Address";
+            addressAlertMsg.style.color = "red";
+            pinCode.disabled = true;
+        }
+        else {
             pinCode.disabled = true;
         }
     };
-
-    enablePincodeBox();
-    
-    
-    }
 //}
 
 firstName.addEventListener('input', firstNameValidation);
@@ -153,6 +173,6 @@ mobileNo.addEventListener('input', function () {
 checkBoxValue.forEach(checkbox => {
     checkbox.addEventListener('input', firstNameValidation);
 });
-
-
-
+inputAddress1.addEventListener('input', function(){
+    enablePincodeBox();
+})

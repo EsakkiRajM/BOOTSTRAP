@@ -35,6 +35,12 @@
     .boxAlertColor {
     border-color: red;
 }
+
+@media (min-width: 992px) {
+      .checkbox-column {
+        flex: 0 0 100%; /* Each checkbox takes up full width */
+      }
+    }
   </style>
 </head>
 
@@ -45,18 +51,18 @@
       <div class="card-body">
         <form action="" method="get">
           <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
               <label for="firstName">First name<span class="text-danger">* </span>:</label>
               <input type="text" class="form-control" placeholder="First name (min 3 character)" aria-label="First name" id="firstName">
               <span id="firstNameAlert" class="textBoxBorderAlert"></span>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
               <label for="lastName">Last name<span class="text-danger">* </span>:</label>
               <input type="text" class="form-control" placeholder="Last name (min 1 character)" aria-label="Last name" id="lastName" disabled>
               <span id="lastNameAlert" class="textBoxBorderAlert"></span>
             </div>
 
-            <div class="col-6 p-2">
+            <div class="col-12 col-sm-6 p-2">
               <label class="" for="gender">Gender<span class="text-danger">* </span>:</label>
 
                 <div class="form-check radioStyle">
@@ -73,43 +79,43 @@
                 </div>
             </div>
 
-            <div class="col-6 p-2">
+            <div class="col-12 col-sm-6 p-2">
               <label for="mobileNo">Mobile no<span class="text-danger">* </span>:</label>
               <input type="number" class="form-control" placeholder="Mobile no (enter 10 digit mobile no)" id="mobileNo" maxlength="10" disabled>
+              <span id="mobileNoAlert"></span>
             </div>
 
 
             <div class="">
-              <div class="p-2 col-lg-12 d-flex justify-content-between flex-wrap">
+              <div class="p-2 col-12 d-flex justify-content-between flex-wrap">
                 <label class="" for="">Choice of food<span class="text-danger">* </span>:</label>
-
-                <div class="form-check radioStyle col-lg-12">
+                <div class="form-check radioStyle col-lg-2 col-12">
                   <input class="form-check-input checkBoxValue" type="checkbox" name="Idly" id="Idly" value="" checked disabled>
                   <label class="form-check-label" for="Idly">
                     Idly
                   </label>
                 </div>
-                <div class="form-check radioStyle col-lg-12">
+                <div class="form-check radioStyle col-lg-2 col-12">
                   <input class="form-check-input checkBoxValue" type="checkbox" name="Dosa" id="Dosa" value="" checked disabled>
                   <label class="form-check-label" for="Dosa">
                     Dosa
                   </label>
                 </div>
 
-                <div class="form-check radioStyle col-lg-12">
+                <div class="form-check radioStyle col-lg-2 col-12">
                   <input class="form-check-input checkBoxValue" type="checkbox" name="Biriyani" id="Biriyani" value="" disabled>
                   <label class="form-check-label" for="Biriyani">
                     Biriyani
                   </label>
                 </div>
-                <div class="form-check radioStyle col-lg-12">
+                <div class="form-check radioStyle col-lg-2 col-12">
                   <input class="form-check-input checkBoxValue" type="checkbox" name="Chapathi" id="Chapathi" value="" disabled> 
                   <label class="form-check-label" for="Chapathi">
                     Chapathi
                   </label>
                 </div>
 
-                <div class="form-check radioStyle col-lg-12">
+                <div class="form-check radioStyle col-lg-2 col-12">
                   <input class="form-check-input checkBoxValue" type="checkbox" name="" id="Friedrice" value="male" disabled>
                   <label class="form-check-label" for="Friedrice">
                     Fried rice
@@ -126,7 +132,7 @@
 
             <div class="col-12">
               <label for="inputAddress1" class="form-label">Address 1 <span class="text-danger">* </span>:</label>
-              <input type="text" class="form-control" id="inputAddress1" placeholder="House or Plat no, Street" disabled>
+              <input type="text" class="form-control" id="inputAddress1" placeholder="House or Plat no, Street (min 6 character)" disabled>
             </div>
             <span id="addressAlertMsg"></span>
             <div class="col-12">
@@ -136,21 +142,21 @@
 
 
 
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
               <label for="email">Email :</label>
               <input type="email" class="form-control" placeholder="Email address" id="email" disabled>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
               <label for="pinCode">Pin code<span class="text-danger">* </span>:</label>
-              <input type="number" class="form-control" placeholder="Pincode" id="pinCode" disabled>
+              <input type="number" class="form-control" placeholder="Pincode" id="pinCode" maxlength="6" disabled>
             </div>
 
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
               <label for="state">State<span class="text-danger">* </span>:</label>
               <input type="text" class="form-control" placeholder="State name" id="state">
             </div>
-            <div class="col-6">
-              <label for="country">Country :</label>
+            <div class="col-12 col-sm-6">
+              <label for="country">Country <span class="text-danger">* </span>:</label>
               <input type="text" class="form-control" placeholder="Country name" id="country">
             </div>
 
@@ -160,10 +166,9 @@
 
           </div>
         </form>
-      </div>
     </div>
-
   </div>
-</body>
+  </div>
 
+</body>
 </html>
