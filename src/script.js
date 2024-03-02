@@ -63,7 +63,7 @@ let countDownOne = (callback) => {
 }
 let countDownResult = (callback) => {
     setTimeout(() => {
-        output.innerHTML = "Love you susi, romba kasta paduthiruntha, Nee than naye yenakku yeppavume special ma, unna vida yenakku yarum inportant illa naye, love you too and unlimited sorry naye, yen kudave iru naye love you naye";
+        output.innerHTML = "Happy Independence Day";
         callback();
     }, 1000);
 }
