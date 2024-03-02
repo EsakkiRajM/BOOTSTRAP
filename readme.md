@@ -6,5 +6,5 @@
 
  - I used HTML, CSS, Bootstrap and JS in this task   
 
-  - HTML file is ![index](index.html)
+  - HTML file is (index.html)
 
