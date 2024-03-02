@@ -75,12 +75,12 @@
 
             <div class="col-6 p-2">
               <label for="mobileNo">Mobile no<span class="text-danger">* </span>:</label>
-              <input type="number" class="form-control" placeholder="Mobile no (enter 10 digit mobile no)" id="mobileNo" disabled>
+              <input type="number" class="form-control" placeholder="Mobile no (enter 10 digit mobile no)" id="mobileNo" maxlength="10" disabled>
             </div>
 
 
             <div class="">
-              <div class="p-2 col-12 d-flex justify-content-between col-sm-12">
+              <div class="p-2 col-12 d-flex justify-content-between flex-wrap">
                 <label class="" for="">Choice of food<span class="text-danger">* </span>:</label>
 
                 <div class="form-check radioStyle col-2">
@@ -118,6 +118,7 @@
 
               </div>
             </div>
+            <span id="checkBoxValidateMsg"></span>
 
 
 
@@ -125,22 +126,23 @@
 
             <div class="col-12">
               <label for="inputAddress1" class="form-label">Address 1 <span class="text-danger">* </span>:</label>
-              <input type="text" class="form-control" id="inputAddress1" placeholder="House or Plat no, Street">
+              <input type="text" class="form-control" id="inputAddress1" placeholder="House or Plat no, Street" disabled>
             </div>
+            <span id="addressAlertMsg"></span>
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Address 2:</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Area, District">
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Area, District" disabled>
             </div>
 
 
 
             <div class="col-6">
               <label for="email">Email :</label>
-              <input type="email" class="form-control" placeholder="Email address" id="email">
+              <input type="email" class="form-control" placeholder="Email address" id="email" disabled>
             </div>
             <div class="col-6">
               <label for="pinCode">Pin code<span class="text-danger">* </span>:</label>
-              <input type="number" class="form-control" placeholder="Pincode" id="pinCode">
+              <input type="number" class="form-control" placeholder="Pincode" id="pinCode" disabled>
             </div>
 
             <div class="col-6">
