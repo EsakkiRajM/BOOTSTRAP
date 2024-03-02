@@ -1,6 +1,8 @@
 body {
     /* background-color: antiquewhite; */
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+    /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+    /* background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); */
+    background-image: radial-gradient(red, yellow, green); 
 }
 
 .boxAlertColor {
