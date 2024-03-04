@@ -10,12 +10,12 @@
 
   - JS file is [script.js](src/script.js)
 
-  **Task URL:**   
+  **Task URL:** https://checkweatherincountries.netlify.app
 
    - I have attached `Output image` for your reference  
 
    **Output:**
 
- - ![output image](assets/img/output.PNG)
+ ![output image](assets/img/output.PNG)
 
 
