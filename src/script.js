@@ -13,6 +13,7 @@ let fetchCountries = (() => {
             // Create a container div with the "row" class
             let containerDiv = document.createElement('div');
             containerDiv.classList.add('row');
+            containerDiv.style.backgroundColor = "black";
 
             // Loop through the countries data
             countries.forEach(country => {
@@ -33,14 +34,20 @@ let fetchCountries = (() => {
                 flagImg.classList.add('img-fluid', 'rounded', 'imgSize', 'd-block', 'mt-3');
 
                 let capitalName = document.createElement('p');
-                capitalName.innerHTML = `Capital: ${country.capital}`;
+                //capitalName.innerHTML = `Capital: ${country.capital}`;
+                if(country.capital){
+                    capitalName.innerHTML = `Capital: ${country.capital}`;
+                }
                 capitalName.classList.add('mt-4')
 
                 let region = document.createElement('p');
                 region.innerHTML = `Region: ${country.region}`;
 
                 let countryCode = document.createElement('p');
-                countryCode.innerHTML = `Code: ${country.fifa}`;
+                //countryCode.innerHTML = `Code: ${country.fifa}`;
+                if(country.fifa){
+                    countryCode.innerHTML = `Code: ${country.fifa}`;
+                }
                 // Create a header for the country name
                 let header = document.createElement('h5');
                 header.classList.add('card-header', 'text-bg-dark', 'text-center');

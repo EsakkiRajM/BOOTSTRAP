@@ -1,0 +1,27 @@
+https://restcountries.com/v3.1/all
+
+
+https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=67556f9fea68e3f37674b51d0ece8d23
+
+
+{
+
+http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
+
+}
+
+http://api.openweathermap.org/geo/1.0/zip?zip={zip code},{country code}&appid={API key}
+
+=====================
+
+use this api: https://api.openweathermap.org/data/2.5/weather?lat=15.33&lon=38.93&appid=67556f9fea68e3f37674b51d0ece8d23
+
+1C343C
+
+<script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+
+https://github.com/EsakkiRajM/BOOTSTRAP/tree/WeatherTask
+
+https://checkweatherincountries.netlify.app/
+
+
