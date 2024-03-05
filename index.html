@@ -43,7 +43,7 @@
     <div class="card shadow-lg">
       <div class="card-header text-center">Food Order Form</div>
       <div class="card-body">
-        <form action="" method="get">
+        <form action="" method="get" id="form">
           <div class="row">
             <div class="col-12 col-sm-6">
               <label for="firstName">First name<span class="text-danger">* </span>:</label>
@@ -142,17 +142,26 @@
             </div>
             <div class="col-12 col-sm-6">
               <label for="pinCode">Pin code<span class="text-danger">* </span>:</label>
-              <input type="number" class="form-control" placeholder="Pincode" id="pinCode" maxlength="6" disabled>
+              <input type="number" class="form-control" placeholder="Pincode (Enter 6 digit numbers)" id="pinCode" maxlength="6" disabled>
+              <span id="pinCodeAlert" class="pinCodeAlert"></span>
             </div>
 
             <div class="col-12 col-sm-6">
               <label for="state">State<span class="text-danger">* </span>:</label>
-              <input type="text" class="form-control" placeholder="State name" id="state">
+              <input type="text" class="form-control" placeholder="State name (min 3 character)" id="state" disabled>
+              <span id="stateAlert" class="stateAlert"></span>
             </div>
             <div class="col-12 col-sm-6">
               <label for="country">Country <span class="text-danger">* </span>:</label>
-              <input type="text" class="form-control" placeholder="Country name" id="country">
+              <input type="text" class="form-control" placeholder="Country name (min 3 character)" id="country" disabled>
+              <span id="countryAlert" class="countryAlert"></span>
             </div>
+            <div class="col-10"></div>
+            <input type="reset" value="Cancel" class="btn btn-warning col-2 mt-3 mr-10 p-2" id="cancelBtn" disabled>
+          
+          <div class="col-10"></div>
+            <input type="submit" value="Submit" class="btn btn-primary col-2 mt-3 mr-10 p-2" id="submitBtn" disabled>
+          
 
 
             <!-- <script src="src/script.js"></script> -->
