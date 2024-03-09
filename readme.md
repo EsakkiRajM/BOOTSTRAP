@@ -16,6 +16,6 @@
 
    **Output:**
 
- ![output image](outputs\Pagination.PNG);
+ ![output image](outputs\Pagination.PNG)
 
 
