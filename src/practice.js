@@ -21,13 +21,12 @@ let country = document.getElementById("country");
 let cancelBtn = document.getElementById("cancelBtn");
 let submitBtn = document.getElementById("submitBtn");
 let form = document.getElementById("form");
-
-//console.log(checkBoxValue.length);
+let tableList = document.getElementById("tableList");
 
 
 let firstNameValidation = function () {
 
-    if (firstName.value.length >= 3) {
+    if (firstName.value.trim().length >= 3) {
         lastName.disabled = false;
         male.disabled = false;
         female.disabled = false;
@@ -51,14 +50,10 @@ let firstNameValidation = function () {
         cancelBtn.classList.remove("btn-outline-warning");
         cancelBtn.classList.add("btn-warning");
 
-        // lastName.value = "";
     } else {
         lastName.disabled = true;
-        // lastName.value = "";
         firstNameAlert.innerHTML = "";
         firstName.classList.remove("border-danger");
-        // cancelBtn.classList.remove("btn-outline-warning");
-        // cancelBtnancelBtn.classList.add("btn-warning");
     }
 
     commonValidation();
@@ -72,7 +67,7 @@ let firstNameValidation = function () {
 
 let lastNameValidation = function () {
 
-    if (lastName.value.length >= 1) {
+    if (lastName.value.trim().length >= 1) {
         male.disabled = false;
         female.disabled = false;
         lastName.classList.remove("border-danger");
@@ -104,11 +99,11 @@ let commonValidation = function () {
         mobileNo.disabled = false;
     } else {
         mobileNo.disabled = true;
-        //mobileNo.value = "";
     }
 
     let enableCheckboxes = function () {
-        if (mobileNo.value.length === 10) {
+        if (mobileNo.value.trim().length === 10) {
+            mobileNoAlert.innerHTML = "";
             checkBoxValue.forEach(checkbox => {
                 checkbox.disabled = false;
             });
@@ -155,7 +150,7 @@ let enableAddressBox = function () {
 
 let enablePincodeBox = function () {
 
-    if (inputAddress1.value.length >= 6) {
+    if (inputAddress1.value.trim().length >= 6) {
         pinCode.disabled = false;
 
     } else if (inputAddress1.value.length == 0) {
@@ -172,7 +167,8 @@ let enablePincodeBox = function () {
 };
 
 let enableStateBox = function () {
-    if (pinCode.value.length === 6) {
+    if (pinCode.value.trim().length === 6) {
+        pinCodeAlert.innerHTML = "";
         state.disabled = false;
     } else if (pinCode.value.length === 0) {
         state.disabled = true;
@@ -192,7 +188,7 @@ let enableStateBox = function () {
 }
 
 let enableCountryBox = function () {
-    if (state.value.length >= 3) {
+    if (state.value.trim().length >= 3) {
         country.disabled = false;
     } else if (state.value.length === 0) {
         country.disabled = true;
@@ -205,7 +201,7 @@ let enableCountryBox = function () {
 }
 
 let enableSubmitBtn = function () {
-    if (country.value.length >= 3) {
+    if (country.value.trim().length >= 3) {
         submitBtn.disabled = false;
         submitBtn.classList.remove("btn-primary");
         submitBtn.classList.add("btn-outline-primary");
@@ -223,10 +219,176 @@ let enableSubmitBtn = function () {
     }
 }
 
-let submitForm = function () {
+let tableBody = document.getElementById("tableBody");
+let table = document.createElement('table');
+table.classList.add("table", "table-striped");
+
+let createTable = function () {
+
+    let tableHeader = document.getElementById("tableHeader");
+    let tableHeader1 = document.createElement("h5");
+    let strong = document.createElement("strong");
+    strong.innerHTML = "Food order lists";
+    tableHeader1.classList.add("text-center", "align-items-center", "mt-2");
+    tableHeader.classList.add("text-bg-info", "m-2")
+
+    tableHeader.append(tableHeader1);
+    tableHeader1.appendChild(strong);
+
+    table.classList.add("table", "table-sm", "table-bordered", "border-primary", "table-danger");
+
+    let tableHead = document.createElement('thead');
+    tableHead.classList.add("p-3");
+
+    let tableRow = document.createElement('tr');
+
+    let theadFirstName = document.createElement('th');
+    theadFirstName.innerHTML = "First name"; // Set the content of the table header
+
+    let theadLastName = document.createElement('th');
+    theadLastName.innerHTML = "Last name";
+
+    let theadGender = document.createElement('th');
+    theadGender.innerHTML = "Gender";
+
+    let theadAddress = document.createElement('th');
+    theadAddress.innerHTML = "Address";
+
+    let theadPincode = document.createElement('th');
+    theadPincode.innerHTML = "Pincode";
+
+    let theadFood = document.createElement('th');
+    theadFood.innerHTML = "Food name";
+
+    let theadState = document.createElement('th');
+    theadState.innerHTML = "State";
+
+    let theadCountry = document.createElement('th');
+    theadCountry.innerHTML = "Country";
+
+    tableRow.append(
+        theadFirstName,
+        theadLastName,
+        theadGender,
+        theadAddress,
+        theadPincode,
+        theadFood,
+        theadState,
+        theadCountry
+    ); // Append the table header to the table row
+
+    tableBody.appendChild(table); // Append the table to the table body
+    table.appendChild(tableHead);
+    tableHead.appendChild(tableRow); // Append the table row to the table
+
+}
+
+createTable();
+
+// new line 
+
+function getFormData() {
+   
+        // Store the checked checkboxes in a variable
+        let checkedCheckboxes = Array.from(document.querySelectorAll('.checkBoxValue:checked'));
+
+        // Extract the values of the checked checkboxes
+        let foodValues = checkedCheckboxes.map(checkbox => checkbox.value);
+    
+
+    return {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        gender: male.checked ? "M" : female.checked ? "F" : "",
+        address: inputAddress1.value + (inputAddress2.value ? ", " + inputAddress2.value : ""),
+        pincode: pinCode.value,
+        food: foodValues,
+        state: state.value,
+        country: country.value
+    };
+}
+
+function addRowToTable(data) {
+
+    let tBody = document.createElement('tbody');
+    let newRow = document.createElement("tr");
+    table.classList.add("table", "table-sm", "table-bordered", "border-primary");
+    newRow.classList.add("table-success");
+    // Create table cells and append data
+    let firstNameCell = document.createElement("td");
+    firstNameCell.textContent = data.firstName;
+    newRow.appendChild(firstNameCell);
+
+    let lastNameCell = document.createElement("td");
+    lastNameCell.textContent = data.lastName;
+    newRow.appendChild(lastNameCell);
+
+    let genderCell = document.createElement("td");
+    genderCell.textContent = data.gender;
+    newRow.appendChild(genderCell);
+
+    let addressCell = document.createElement("td");
+    addressCell.textContent = data.address;
+    newRow.appendChild(addressCell);
+
+    let pincodeCell = document.createElement("td");
+    pincodeCell.textContent = data.pincode;
+    newRow.appendChild(pincodeCell);
+
+    let foodCell = document.createElement("td");
+    let foodList = document.createElement("ul");
+
+    //console.log(data.food);
+
+    data.food.forEach(food => {
+        let foodItem = document.createElement("li");
+        foodItem.innerHTML = food;
+        foodList.appendChild(foodItem);
+        //console.log(food[data]);
+    });
+
+    foodCell.appendChild(foodList);
+    newRow.appendChild(foodCell);
+
+    let stateCell = document.createElement("td");
+    stateCell.textContent = data.state;
+    newRow.appendChild(stateCell);
+
+    let countryCell = document.createElement("td");
+    countryCell.textContent = data.country;
+    newRow.appendChild(countryCell);
+
+    // Append the new row to the table body
+    tableBody.appendChild(table);
+    table.appendChild(tBody);
+    tBody.appendChild(newRow);
+    // newRow.append(firstNameCell,
+    //     lastNameCell,
+    //     genderCell,
+    //     addressCell,
+    //     pincodeCell,
+    //     foodCell,
+    //     stateCell,
+    //     countryCell
+    // );
+}
+
+// end line 
+
+let submitForm = function (e) {
+    e.preventDefault();
+
     if (confirm("Are you sure you want to confirm the order?")) {
-        form.submit();
+        // new line 
+        let formData = getFormData();
+        addRowToTable(formData);
+        //console.log(checkbox.value);
+        // end line
+        form.reset();
+        submitBtn.disabled = true;
     }
+    
+
 }
 
 
@@ -261,5 +423,7 @@ state.addEventListener('input', enableCountryBox);
 
 country.addEventListener('input', enableSubmitBtn);
 
-submitBtn.addEventListener('click', submitForm);
+submitBtn.addEventListener('click', function (e) {
+    submitForm(e);
+});
 cancelBtn.addEventListener('click', cancelForm);

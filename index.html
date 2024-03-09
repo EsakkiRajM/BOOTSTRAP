@@ -33,49 +33,52 @@
     } */
 
     .boxAlertColor {
-    border-color: red;
-}
+      border-color: red;
+    }
   </style>
 </head>
 
 <body>
   <div class="form-group container mt-5 mb-5">
     <div class="card shadow-lg">
-      <div class="card-header text-center">Food Order Form</div>
+      <div class="card-header text-center text-bg-info m-2 align-items-center"><h5><strong>Food Order Form</strong></h5></div>
       <div class="card-body">
-        <form action="" method="get" id="form">
+        <form action="" method="post" id="form">
           <div class="row">
             <div class="col-12 col-sm-6">
               <label for="firstName">First name<span class="text-danger">* </span>:</label>
-              <input type="text" class="form-control" placeholder="First name (min 3 character)" aria-label="First name" id="firstName">
+              <input type="text" class="form-control" placeholder="First name (min 3 character)" aria-label="First name"
+                id="firstName">
               <span id="firstNameAlert" class="textBoxBorderAlert"></span>
             </div>
             <div class="col-12 col-sm-6">
               <label for="lastName">Last name<span class="text-danger">* </span>:</label>
-              <input type="text" class="form-control" placeholder="Last name (min 1 character)" aria-label="Last name" id="lastName" disabled>
+              <input type="text" class="form-control" placeholder="Last name (min 1 character)" aria-label="Last name"
+                id="lastName" disabled>
               <span id="lastNameAlert" class="textBoxBorderAlert"></span>
             </div>
 
             <div class="col-12 col-sm-6 p-2">
               <label class="" for="gender">Gender<span class="text-danger">* </span>:</label>
 
-                <div class="form-check radioStyle">
-                  <input class="form-check-input" type="radio" name="gender" id="male" value="male" disabled>
-                  <label class="form-check-label" for="male">
-                    Male
-                  </label>
-                </div>
-                <div class="form-check radioStyle">
-                  <input class="form-check-input" type="radio" name="gender" id="female" value="female" disabled>
-                  <label class="form-check-label" for="female">
-                    Female
-                  </label>
-                </div>
+              <div class="form-check radioStyle">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male" disabled>
+                <label class="form-check-label" for="male">
+                  Male
+                </label>
+              </div>
+              <div class="form-check radioStyle">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female" disabled>
+                <label class="form-check-label" for="female">
+                  Female
+                </label>
+              </div>
             </div>
 
             <div class="col-12 col-sm-6 p-2">
               <label for="mobileNo">Mobile no<span class="text-danger">* </span>:</label>
-              <input type="number" class="form-control" placeholder="Mobile no (enter 10 digit mobile no)" id="mobileNo" maxlength="10" disabled>
+              <input type="number" class="form-control" placeholder="Mobile no (enter 10 digit mobile no)" id="mobileNo"
+                maxlength="10" disabled>
               <span id="mobileNoAlert"></span>
             </div>
 
@@ -84,33 +87,38 @@
               <div class="p-2 col-12 d-flex justify-content-between flex-wrap">
                 <label class="" for="">Choice of food<span class="text-danger">* </span>:</label>
                 <div class="form-check radioStyle col-lg-2 col-12">
-                  <input class="form-check-input checkBoxValue" type="checkbox" name="Idly" id="Idly" value="" checked disabled>
+                  <input class="form-check-input checkBoxValue" type="checkbox" name="Idly" id="Idly" value="Idly" checked
+                    disabled>
                   <label class="form-check-label" for="Idly">
                     Idly
                   </label>
                 </div>
                 <div class="form-check radioStyle col-lg-2 col-12">
-                  <input class="form-check-input checkBoxValue" type="checkbox" name="Dosa" id="Dosa" value="" checked disabled>
+                  <input class="form-check-input checkBoxValue" type="checkbox" name="Dosa" id="Dosa" value="Dosa" checked
+                    disabled>
                   <label class="form-check-label" for="Dosa">
                     Dosa
                   </label>
                 </div>
 
                 <div class="form-check radioStyle col-lg-2 col-12">
-                  <input class="form-check-input checkBoxValue" type="checkbox" name="Biriyani" id="Biriyani" value="" disabled>
+                  <input class="form-check-input checkBoxValue" type="checkbox" name="Biriyani" id="Biriyani" value="Biriyani"
+                    disabled>
                   <label class="form-check-label" for="Biriyani">
                     Biriyani
                   </label>
                 </div>
                 <div class="form-check radioStyle col-lg-2 col-12">
-                  <input class="form-check-input checkBoxValue" type="checkbox" name="Chapathi" id="Chapathi" value="" disabled> 
+                  <input class="form-check-input checkBoxValue" type="checkbox" name="Chapathi" id="Chapathi" value="Chapathi"
+                    disabled>
                   <label class="form-check-label" for="Chapathi">
                     Chapathi
                   </label>
                 </div>
 
                 <div class="form-check radioStyle col-lg-2 col-12">
-                  <input class="form-check-input checkBoxValue" type="checkbox" name="" id="Friedrice" value="male" disabled>
+                  <input class="form-check-input checkBoxValue" type="checkbox" name="" id="Friedrice" value="Fried rice"
+                    disabled>
                   <label class="form-check-label" for="Friedrice">
                     Fried rice
                   </label>
@@ -126,7 +134,8 @@
 
             <div class="col-12">
               <label for="inputAddress1" class="form-label">Address 1 <span class="text-danger">* </span>:</label>
-              <input type="text" class="form-control" id="inputAddress1" placeholder="House or Plat no, Street (min 6 character)" disabled>
+              <input type="text" class="form-control" id="inputAddress1"
+                placeholder="House or Plat no, Street (min 6 character)" disabled>
             </div>
             <span id="addressAlertMsg"></span>
             <div class="col-12">
@@ -142,7 +151,8 @@
             </div>
             <div class="col-12 col-sm-6">
               <label for="pinCode">Pin code<span class="text-danger">* </span>:</label>
-              <input type="number" class="form-control" placeholder="Pincode (Enter 6 digit numbers)" id="pinCode" maxlength="6" disabled>
+              <input type="number" class="form-control" placeholder="Pincode (Enter 6 digit numbers)" id="pinCode"
+                maxlength="6" disabled>
               <span id="pinCodeAlert" class="pinCodeAlert"></span>
             </div>
 
@@ -153,25 +163,59 @@
             </div>
             <div class="col-12 col-sm-6">
               <label for="country">Country <span class="text-danger">* </span>:</label>
-              <input type="text" class="form-control" placeholder="Country name (min 3 character)" id="country" disabled>
+              <input type="text" class="form-control" placeholder="Country name (min 3 character)" id="country"
+                disabled>
               <span id="countryAlert" class="countryAlert"></span>
             </div>
-            <div class="col-10"></div>
-            <input type="reset" value="Cancel" class="btn btn-warning col-2 mt-3 mr-10 p-2" id="cancelBtn" disabled>
-          
-          <div class="col-10"></div>
-            <input type="submit" value="Submit" class="btn btn-primary col-2 mt-3 mr-10 p-2" id="submitBtn" disabled>
-          
+
+            <!-- <div class="container">
+              <div class="col align-items-center justify-content-md-end p-2 mt-2 ">
+                <input type="reset" value="Cancel " class="btn btn-warning" id="cancelBtn" disabled>
+              </div>
+              <div class="col align-items-center justify-content-md-center p-2">
+                <input type="submit" value="Submit" class="btn btn-primary" id="submitBtn" disabled>
+              </div>
+            </div> -->
+
+            <div class="container">
+              <div class="col text-center text-md-end p-2 mt-2 ">
+                <input type="reset" value="Cancel " class="btn btn-warning" id="cancelBtn" disabled>
+              </div>
+              <div class="col text-center text-md-end p-2">
+                <input type="submit" value="Submit" class="btn btn-primary" id="submitBtn" disabled>
+              </div>
+            </div>
 
 
             <!-- <script src="src/script.js"></script> -->
-            <script src="src/practice.js"></script>
+           
 
           </div>
         </form>
+      </div>
+    </div>
+    <div class="container d-block" id="tableList">
+      <div class="card shadow-lg mt-3">
+
+        <div class="card-header" id="tableHeader"></div>
+
+          <div class="card-body" id="tableBody">
+            
+            <!-- <table class="table table-sm table-info">
+                <tr class="table-info">
+                  <th>First name</th>
+                  <th>Last name</th>
+                </tr>
+            </table> -->
+
+          
+
+        </div>
+
+      </div>
     </div>
   </div>
-  </div>
-
+  <script src="src/practice.js"></script>
 </body>
+
 </html>
